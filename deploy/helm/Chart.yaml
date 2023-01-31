@@ -9,23 +9,3 @@ maintainers:
     name: Nico Weiser
 
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: hello-world
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: hello-world
-  template:
-    metadata:
-      labels:
-        app: hello-world
-    spec:
-      containers:
-        - name: app
-          image: docker.io/mdottwo/terraform-hello-world:latest
-          ports:
-            - containerPort: 8080
-          imagePullPolicy: Never
